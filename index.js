@@ -101,6 +101,9 @@ var net_total = (finances[total_months-1][1] - finances[0][1]);
 console.log("The net Profit/Loss is " + net_total);
 
 // The average of the changes in Profit/Losses over the entire period.
+var full_average = (sum / total_months-1);
+var average = full_average.toFixed(2)
+console.log("The average changes in Profit/Loss over the entire period is " + average )
 
 // You will need to track what the total change in profits are from month to month and then find the average.
 // (Total/Number of months)
