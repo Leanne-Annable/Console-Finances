@@ -88,10 +88,15 @@ var finances = [
 ];
 
 // The total number of months included in the dataset.
+var sum = 0
+for (var total_months = 0; total_months<finances.length; total_months++){
+    sum += parseInt(finances[total_months][1])
+};
 
-for (var total_months = 0; total_months<finances.length; total_months++);
-console.log("The total number of months is " + total_months)
+console.log("The total number of months is " + total_months);
+
 // The net total amount of Profit/Losses over the entire period.
+
 
 // The average of the changes in Profit/Losses over the entire period.
 
