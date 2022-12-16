@@ -87,26 +87,36 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+
+
+var sum=0
 // The total number of months included in the dataset.
-var sum = 0
 for (var total_months = 0; total_months<finances.length; total_months++){
-    sum += parseInt(finances[total_months][1])
+    // The net total amount of Profit/Losses over the entire period.
+    sum += parseInt(finances[total_months][1]);
 };
 
-console.log("The total number of months is " + total_months);
-
-// The net total amount of Profit/Losses over the entire period.
-
-var net_total = (finances[total_months-1][1] - finances[0][1]);
-console.log("The net Profit/Loss is " + net_total);
 
 // The average of the changes in Profit/Losses over the entire period.
-var full_average = (sum / total_months-1);
-var average = full_average.toFixed(2)
-console.log("The average changes in Profit/Loss over the entire period is " + average )
-
 // You will need to track what the total change in profits are from month to month and then find the average.
 // (Total/Number of months)
+var full_average = (sum / (total_months-1));
+// making it 2 decimal places
+var average = full_average.toFixed(2);
+
+
 // The greatest increase in profits (date and amount) over the entire period.
 
+
 // The greatest decrease in losses (date and amount) over the entire period.
+
+
+// console promt:
+
+console.log("Financial Analysis");
+console.log("------------------------------");
+console.log("Total Months: " + total_months);
+console.log("Total: $" + sum);
+console.log("Average Change: $");
+console.log("Greatest Increase in Profits: ");
+console.log("Greatest Decrease in Profits: ");
