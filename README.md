@@ -12,7 +12,7 @@ When opening the Webpage you need to right click, select inspect (alternatively 
 
 Here is a screen shot the webpage and console output side by side.
 
-![Console-Financial-Analysis](images/Screenshot%202022-12-18%20162458.jpg)
+![Console-Financial-Analysis](images/Console-screenshot.jpg)
 
 Link to active website: https://Leanne-Annable.github.io/Console-Finances
 
