@@ -111,7 +111,7 @@ for (var total_months = 0; total_months < finances.length; total_months++) {
 for (var j = 0; j < diff.length; j++) {
     diffSum += diff[j][1];
 }
-console.log(diff)
+// console.log(diff)
 
 // (Total/Number of months)
 var average = diffSum / (finances.length - 1);
@@ -119,19 +119,49 @@ var average = diffSum / (finances.length - 1);
 average = average.toFixed(2);
 
 // // The greatest increase in profits (date and amount) over the entire period.
-// var max_month = "";
-// var max_amount = 0;
 
-// for (var check_months = 0; check_months < diff.length; check_months += 1) {
-//     var current_amount = 
-//     if (check_months[1]>max_month[1]){
-//         max_month = check_months
-//     }
-// }
+var max = 0;
+// Loop through the array to find the max value
+for (var i=0; i<diff.length; i++){
+    var current_value = diff [i][1]; // Get the current value
+    if (current_value > max){ //If it is more than the max value, update the max value
+        max = current_value;
+    }
+}
 
+var max_month;
+var max_amount;
 
-// // The greatest decrease in losses (date and amount) over the entire period.
+// Loop through again to link the month and amount with the max value
+for (var i=0; i<diff.length; i++){
+    var current_value = diff[i][1];
+    if (current_value === max){ //if equal to max value, link the month and amount
+        max_month = diff[i][0];
+        max_amount = current_value;
+    }
+}
 
+// The greatest decrease in losses (date and amount) over the entire period.
+
+// same as above but with minimum values
+var min = 0;
+for (var i=0; i<diff.length; i++){
+    var current_value = diff [i][1];
+    if (current_value < min){
+        min = current_value;
+    }
+}
+
+var min_month;
+var min_amount;
+
+for (var i=0; i<diff.length; i++){
+    var current_value = diff[i][1];
+    if (current_value === min){
+        min_month = diff[i][0];
+        min_amount = current_value;
+    }
+}
 
 // console promt:
 
@@ -140,5 +170,5 @@ console.log("------------------------------");
 console.log("Total Months: " + total_months);
 console.log("Total: $" + sum);
 console.log("Average Change: $" + average);
-console.log("Greatest Increase in Profits: "  );
-console.log("Greatest Decrease in Profits: " );
+console.log("Greatest Increase in Profits: " + max_month + " ($" + max_amount + ")");
+console.log("Greatest Decrease in Profits: " + min_month + " ($" + min_amount + ")");
