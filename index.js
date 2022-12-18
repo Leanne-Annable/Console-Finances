@@ -91,7 +91,6 @@ var sum = 0
 var difference = 0
 var diff = []
 var diffSum = 0
-var average = 0
 
 // The total number of months included in the dataset.
 for (var total_months = 0; total_months < finances.length; total_months++) {
@@ -99,29 +98,39 @@ for (var total_months = 0; total_months < finances.length; total_months++) {
     sum += parseInt(finances[total_months][1]);
 }
 
-    // The average of the changes in Profit/Losses over the entire period.
-    // You will need to track what the total change in profits are from month to month and then find the average.
+// The average of the changes in Profit/Losses over the entire period.
+// You will need to track what the total change in profits are from month to month and then find the average.
 for (var total_months = 0; total_months < finances.length; total_months++) {
     for (var i = total_months + 1; i < finances.length; i++) {
         difference = finances[i][1] - finances[total_months][1];
-        diff.push(difference);
+        month = finances[i][0];
+        diff.push([month,difference]);
         total_months++;
     }
 };
 for (var j = 0; j < diff.length; j++) {
-    diffSum += diff[j];
+    diffSum += diff[j][1];
 }
-
+console.log(diff)
 
 // (Total/Number of months)
-average = diffSum / (finances.length - 1);
+var average = diffSum / (finances.length - 1);
 // making it 2 decimal places
-average = average.toFixed(2)
+average = average.toFixed(2);
 
-// The greatest increase in profits (date and amount) over the entire period.
+// // The greatest increase in profits (date and amount) over the entire period.
+// var max_month = "";
+// var max_amount = 0;
+
+// for (var check_months = 0; check_months < diff.length; check_months += 1) {
+//     var current_amount = 
+//     if (check_months[1]>max_month[1]){
+//         max_month = check_months
+//     }
+// }
 
 
-// The greatest decrease in losses (date and amount) over the entire period.
+// // The greatest decrease in losses (date and amount) over the entire period.
 
 
 // console promt:
@@ -131,5 +140,5 @@ console.log("------------------------------");
 console.log("Total Months: " + total_months);
 console.log("Total: $" + sum);
 console.log("Average Change: $" + average);
-console.log("Greatest Increase in Profits: ");
-console.log("Greatest Decrease in Profits: ");
+console.log("Greatest Increase in Profits: "  );
+console.log("Greatest Decrease in Profits: " );
